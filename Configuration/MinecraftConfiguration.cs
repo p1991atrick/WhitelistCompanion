@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using WhitelistCompanion.Attributes;
 
 namespace WhitelistCompanion.Configuration
 {
@@ -7,7 +8,7 @@ namespace WhitelistCompanion.Configuration
         public const string Section = "Mc";
 
         [Required]
-        [RegularExpression(@"^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z]|[A-Za-z][A-Za-z0-9\-]*[A-Za-z0-9])$", ErrorMessage = "The {0} field must be a valid hostname")]
+        [HostnameOrIpAddress]
         public string Hostname { get; init; }
 
         [Required]
