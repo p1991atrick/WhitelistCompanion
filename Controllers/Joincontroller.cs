@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using WhitelistCompanion.Configuration;
@@ -12,6 +13,8 @@ namespace WhitelistCompanion.Controllers
 
         public JoinController(IOptions<ApiConfiguration> apiConfig)
         {
+            if (apiConfig is null) throw new ArgumentNullException(nameof(apiConfig));
+
             _apiConfig = apiConfig.Value;
         }
 
