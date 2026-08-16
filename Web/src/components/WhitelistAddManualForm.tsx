@@ -17,7 +17,7 @@ export function WhitelistAddManualForm() {
             queryClient.invalidateQueries();
             setUser("");
             toast({
-                description: "Erfolgreich hinzugefügt.",
+                description: "Successfully added.",
                 status: "success",
                 duration: 5000,
                 position: "top",
@@ -28,7 +28,7 @@ export function WhitelistAddManualForm() {
         } catch {
             toast({
                 description:
-                    "Ungültiger Nickname oder bereits auf der Whitelist.",
+                    "Invalid nickname or already on the whitelist.",
                 status: "error",
                 duration: 5000,
                 position: "top",
@@ -76,8 +76,8 @@ export function WhitelistAddManualForm() {
                     colorScheme="blue"
                 >
                     {mutation.isLoading
-                        ? "Verarbeite..."
-                        : "Zur Whitelist hinzufügen"}
+                        ? "Processing..."
+                        : "Add to whitelist"}
                 </Button>
             </Flex>
         </>

@@ -33,8 +33,8 @@ export function WhitelistList() {
 
             <ScrollableListContent
                 items={users as string[]}
-                error={error ? "Fehler beim Laden der Whitelist." : undefined}
-                empty="Keine Spieler auf der Whitelist."
+                error={error ? "Failed to load the whitelist." : undefined}
+                empty="No players on the whitelist."
                 minMaxHeight="350px"
             />
 

@@ -8,7 +8,7 @@ export function CopyButton({ value }: { value: string }) {
 
     return (
         <IconButton
-            aria-label="Adresse kopieren"
+            aria-label="Copy address"
             icon={hasCopied ? <CheckIcon /> : <CopyIcon />}
             onClick={onCopy}
             variant="unstyled"

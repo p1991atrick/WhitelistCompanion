@@ -18,7 +18,7 @@ export function WhitelistAddCard() {
                         px={2}
                         whiteSpace="nowrap"
                     >
-                        oder manuell
+                        or manually
                     </Text>
                     <Divider />
                 </Flex>

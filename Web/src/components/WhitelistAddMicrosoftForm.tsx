@@ -37,8 +37,8 @@ export function WhitelistAddMicrosoftForm() {
             onClick={onClick}
         >
             {!buttonDisabled
-                ? "Mit Microsoft Account hinzufügen"
-                : "Verarbeite..."}
+                ? "Add with Microsoft Account"
+                : "Processing..."}
         </Button>
     );
 }

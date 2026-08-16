@@ -42,9 +42,9 @@ export function PlayerList() {
             <ScrollableListContent
                 items={data?.users as string[]}
                 error={
-                    error ? "Fehler beim Laden der Spielerliste." : undefined
+                    error ? "Failed to load the player list." : undefined
                 }
-                empty="Keine Spieler online."
+                empty="No players online."
                 minMaxHeight={{ base: "350px", md: "265px" }}
             />
 

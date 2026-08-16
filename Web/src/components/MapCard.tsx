@@ -21,18 +21,18 @@ export function MapCard() {
         refetchInterval: false,
     });
 
-    const openMapInNewTabTooltip = "Karte in neuem Tab öffnen";
+    const openMapInNewTabTooltip = "Open map in new tab";
 
     return (
         <Card>
             <Flex p={4}>
-                <Text fontSize="xl">Karte</Text>
+                <Text fontSize="xl">Map</Text>
                 <Spacer />
                 {data?.data && (
                     <Tooltip label={openMapInNewTabTooltip} fontSize="md">
                         <Link href={data?.data?.mapUri} isExternal>
                             <IconButton
-                                aria-label="Karte in neuem Tab öffnen"
+                                aria-label="Open map in new tab"
                                 size="sm"
                                 icon={<ExternalLinkIcon />}
                             />

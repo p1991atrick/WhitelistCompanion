@@ -23,9 +23,9 @@ const AuthContainer: React.FC = ({ children }) => {
             <Card error={true}>
                 <Box fontSize="lg" p={2} textAlign="center" minW={320}>
                     {notAuthorized ? (
-                        <>Nicht autorisiert!</>
+                        <>Not authorized!</>
                     ) : (
-                        <>Es ist ein unerwarteter Fehler aufgetreten.</>
+                        <>An unexpected error occurred.</>
                     )}
                 </Box>
             </Card>
