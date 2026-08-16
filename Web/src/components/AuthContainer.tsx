@@ -1,5 +1,5 @@
 import { Box, Container, Flex } from "@chakra-ui/layout";
-import { Spinner } from "@chakra-ui/react";
+import { Button, Spinner, Text } from "@chakra-ui/react";
 import * as React from "react";
 import { useQuery } from "react-query";
 import { fetchUserList, getQueryParam, HttpError } from "../api";
@@ -12,11 +12,36 @@ const AuthContainer: React.FC = ({ children }) => {
         retry: 1,
         refetchOnWindowFocus: false,
         refetchInterval: false,
+        enabled: !!hasSecret,
     });
 
+    if (!hasSecret) {
+        return (
+            <Card>
+                <Flex
+                    direction="column"
+                    align="center"
+                    p={8}
+                    minW={320}
+                    gridGap={4}
+                >
+                    <Text fontSize="lg" textAlign="center">
+                        Click below to enter.
+                    </Text>
+                    <Button
+                        onClick={() => (window.location.href = "/join")}
+                        colorScheme="blue"
+                        size="lg"
+                    >
+                        Enter
+                    </Button>
+                </Flex>
+            </Card>
+        );
+    }
+
     const httpError = error as HttpError;
-    const notAuthorized =
-        !hasSecret || (hasSecret && httpError && httpError.statusCode === 401);
+    const notAuthorized = httpError && httpError.statusCode === 401;
 
     if (error || notAuthorized) {
         return (
